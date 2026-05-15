@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,9 +21,18 @@
       --radius: 4px;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { font-size: 16px; scroll-behavior: smooth; }
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--bg);
@@ -50,6 +60,7 @@
       border-top: 1px solid var(--border);
       position: relative;
     }
+
     .rule::after {
       content: '';
       position: absolute;
@@ -136,7 +147,7 @@
       background: #221e18;
     }
 
-    .feed-card + .feed-card {
+    .feed-card+.feed-card {
       border-top: 1px solid var(--border);
     }
 
@@ -152,9 +163,13 @@
       color: var(--orange);
     }
 
-    .feed-icon svg { display: block; }
+    .feed-icon svg {
+      display: block;
+    }
 
-    .feed-info { flex: 1; }
+    .feed-info {
+      flex: 1;
+    }
 
     .feed-title {
       font-family: 'DM Sans', sans-serif;
@@ -205,6 +220,7 @@
       opacity: 0;
       z-index: 1000;
     }
+
     .toast.show {
       transform: translateX(-50%) translateY(0);
       opacity: 1;
@@ -283,17 +299,23 @@
       transition: color 0.2s, background 0.2s;
     }
 
-    .app-pill:hover { color: var(--cream); background: #221e18; }
+    .app-pill:hover {
+      color: var(--cream);
+      background: #221e18;
+    }
 
     .app-dot {
-      width: 6px; height: 6px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--border);
       flex-shrink: 0;
       transition: background 0.2s;
     }
 
-    .app-pill:hover .app-dot { background: var(--orange); }
+    .app-pill:hover .app-dot {
+      background: var(--orange);
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -317,22 +339,40 @@
       transition: color 0.2s;
     }
 
-    .footer-text a:hover { color: var(--cream); }
+    .footer-text a:hover {
+      color: var(--cream);
+    }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 540px) {
-      .feed-action { display: none; }
-      .feed-card { gap: 1rem; }
-      .apps-grid { grid-template-columns: 1fr 1fr; }
+      .feed-action {
+        display: none;
+      }
+
+      .feed-card {
+        gap: 1rem;
+      }
+
+      .apps-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -352,11 +392,11 @@
       <button class="feed-card" data-url="https://esphios.github.io/gugacast-feed/feed.xml" title="Copiar link do feed público" role="listitem" onclick="copyFeed(this)">
         <div class="feed-icon" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="2"/>
-            <path d="M16.24 7.76a6 6 0 0 1 0 8.49"/>
-            <path d="M7.76 16.24a6 6 0 0 1 0-8.49"/>
-            <path d="M20.49 3.51a12 12 0 0 1 0 16.97"/>
-            <path d="M3.51 20.49a12 12 0 0 1 0-16.97"/>
+            <circle cx="12" cy="12" r="2" />
+            <path d="M16.24 7.76a6 6 0 0 1 0 8.49" />
+            <path d="M7.76 16.24a6 6 0 0 1 0-8.49" />
+            <path d="M20.49 3.51a12 12 0 0 1 0 16.97" />
+            <path d="M3.51 20.49a12 12 0 0 1 0-16.97" />
           </svg>
         </div>
         <div class="feed-info">
@@ -366,16 +406,16 @@
         <span class="feed-action">Copiar link</span>
       </button>
 
-      <button class="feed-card" data-url="https://esphios.github.io/gugacast-feed/feed-secreto.xml" title="Copiar link do feed secreto" role="listitem" onclick="copyFeed(this)">
+      <button class="feed-card" data-url="https://esphios.github.io/gugacast-feed/feed-secreto.xml.DEPRECATED" title="Copiar link do feed secreto" role="listitem" onclick="copyFeed(this)">
         <div class="feed-icon" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
           </svg>
         </div>
         <div class="feed-info">
-          <p class="feed-title">Feed Secreto</p>
-          <p class="feed-url">esphios.github.io/gugacast-feed/feed-secreto.xml</p>
+          <p class="feed-title">**DEPRECATED** Feed Secreto</p>
+          <p class="feed-url">esphios.github.io/gugacast-feed/feed-secreto.xml.DEPRECATED</p>
         </div>
         <span class="feed-action">Copiar link</span>
       </button>
@@ -451,4 +491,5 @@
   </script>
 
 </body>
+
 </html>
